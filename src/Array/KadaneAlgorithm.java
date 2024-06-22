@@ -20,5 +20,5 @@ public class KadaneAlgorithm {
 	       }
 	       System.out.println(max);
 	 }
-
+   
 }
