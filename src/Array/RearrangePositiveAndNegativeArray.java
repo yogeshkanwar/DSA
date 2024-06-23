@@ -16,52 +16,25 @@ public class RearrangePositiveAndNegativeArray {
 	                negative.add(num);
 	            }
 	        }
-	        
-	        // Interleave positive and negative integers
-	        List<Integer> result = new ArrayList<>();
-	        int i = 0, j = 0;
-	        boolean turnPositive = true;
-	        
-	        // Start with a positive number
-	        if (!positive.isEmpty() && !negative.isEmpty()) {
-	            result.add(positive.get(0));
-	            turnPositive = false;
-	            i++;
+	        int[] reArrangeArray = new int[nums.length];
+	        int j=0;
+	        for(int i=0; i<positive.size(); i++) {
+	        	
+	        	reArrangeArray[j] = positive.get(i);
+	        	j++;
+	        	reArrangeArray[j] = negative.get(i);
+	        	j++;
+
+	        	
 	        }
+	        return reArrangeArray;
+
 	        
-	        // Interleave
-	        while (i < positive.size() && j < negative.size()) {
-	            if (turnPositive) {
-	                result.add(positive.get(i));
-	                i++;
-	            } else {
-	                result.add(negative.get(j));
-	                j++;
-	            }
-	            turnPositive = !turnPositive;
-	        }
-	        
-	        // Append remaining elements if any
-	        while (i < positive.size()) {
-	            result.add(positive.get(i));
-	            i++;
-	        }
-	        while (j < negative.size()) {
-	            result.add(negative.get(j));
-	            j++;
-	        }
-	        
-	        // Convert List<Integer> to int[]
-	        int[] resultArray = new int[result.size()];
-	        for (int k = 0; k < result.size(); k++) {
-	            resultArray[k] = result.get(k);
-	        }
-	        
-	        return resultArray;
+	      
 	    }
 	    
 	    public static void main(String[] args) {
-	        int[] nums = {1, -1, 2, -2, 3, -3, 4, -4};
+	        int[] nums = {-1,1};
 	        int[] rearranged = rearrangeArray(nums);
 	        
 	        // Print the rearranged array
