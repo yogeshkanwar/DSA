@@ -36,6 +36,24 @@ public class linkedList {
     	previous.next=previous.next.next;
     }
     
+    public Integer search(int index) {
+    	int i =0;
+    	Node current = start;
+    	Integer value = null;
+    	while(current != null) {
+    		if(i == index) {
+    			value = current.value;
+    			break;
+    		} else {
+    			current = current.next;
+    			i++;
+    		}
+    	}
+
+    	return value;
+    	
+    }
+    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -54,7 +72,13 @@ public class linkedList {
         list.add(20);
         list.add(30);
         list.add(40);
-
+        
         System.out.println(list.toString());
+        Integer value = list.search(2);
+        System.out.println("value is " + value);
+
+        
+
+        
     }
 }
