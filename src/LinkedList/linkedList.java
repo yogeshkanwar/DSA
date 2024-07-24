@@ -44,6 +44,7 @@ public class linkedList {
     		if(i == index) {
     			value = current.value;
     			break;
+    			
     		} else {
     			current = current.next;
     			i++;
@@ -67,6 +68,7 @@ public class linkedList {
         
     
     public static void main(String[] args) {
+    	ReverseLinkedList reverseList = new ReverseLinkedList(); 
         linkedList list = new linkedList();
         list.add(10);
         list.add(20);
@@ -74,8 +76,9 @@ public class linkedList {
         list.add(40);
         
         System.out.println(list.toString());
-        Integer value = list.search(2);
-        System.out.println("value is " + value);
+//        Integer value = list.search(2);
+//        System.out.println("value is " + value);
+        System.out.println("reverse linkedList is " + reverseList.reverseList(list));
 
         
 
